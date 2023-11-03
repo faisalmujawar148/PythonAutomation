@@ -4,12 +4,12 @@ from threading import Thread
 import time
 global num
 num=1
-def hold(x,hold_time):
+def hold(key,hold_time): #control how long to hold down a key
     start = time.time()
     while time.time() - start < hold_time:
-        pydirectinput.keyDown(x)
+        pydirectinput.keyDown(key)
     else:
-        pydirectinput.keyUp(x)
+        pydirectinput.keyUp(key)
         
 def on_press(key, abortKey='esc'):
     global num
