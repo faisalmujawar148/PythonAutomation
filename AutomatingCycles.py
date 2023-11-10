@@ -41,7 +41,7 @@ def move_loop():
         
 if __name__ == '__main__': #basically allows you to only run the listener part directly, not as a module, can be removed if you want to import this into another program as a module
     abortKey = 'esc'
-    listener = keyboard.Listener(on_press=on_press, abortKey=abortKey) #Initializing a keyboard listener, you have define on_press=on_press & the same for abortKey is to make sure they only take in the current value of the key press and not the last value that is entered.
+    listener = keyboard.Listener(on_press=on_press, abortKey=abortKey) #Initializing a keyboard listener
     listener.start() 
     Thread(target=move_loop, args=(), name='move_loop', daemon=True).start() #Starting the listener
     listener.join()
